@@ -1,0 +1,13 @@
+#article-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#full-article {
+  margin: 10px;
+  padding: 10px;
+}
+#full-article > section {
+  margin: 10px;
+  padding: 10px;
+}

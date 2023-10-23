@@ -1,17 +1,51 @@
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
+html {
+  font-family: "Exo", sans-serif;
+}
+
 body {
+  background-color: #26272c;
+  color: white;
+}
+header,
+main,
+footer {
   width: 80%;
-  margin: 0 auto;
+  margin: 10px auto;
+  background-color: #3e4f65;
+  border-radius: 10px;
 }
 
 header {
   text-align: center;
-  padding-bottom: 10px;
-  margin: 10px 0 10px 0;
+  padding: 10px;
+  font-family: "Orbitron", sans-serif;
+}
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 5px;
+  margin: 5px;
+}
+nav {
+  margin: 1rem;
 }
 
-a {
+nav > a {
+  padding: 5px;
   margin: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+}
+nav > a:hover {
+  background-color: white;
+  color: black;
+}
+
+.active {
+  background-color: white;
+  color: black;
 }
