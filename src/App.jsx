@@ -14,6 +14,7 @@ function App() {
       <Header />
       <main>
         <Routes>
+          <Route path="/" element={<Navigate replace to="/home" />} />
           <Route index path="/home" element={<Home />} />
           <Route path="/home/:article_id" element={<Article />} />
           <Route path="/profile" element={<Profile />} />

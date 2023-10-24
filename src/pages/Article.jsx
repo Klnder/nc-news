@@ -2,22 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import "./Article.css";
+import { getArticleById } from "../utils/db";
 
 function Article() {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
 
-  async function getArticle() {
+  async function fetchArticle() {
     try {
-      const result = await axios.get(`https://nc-api-project.onrender.com/api/articles/${article_id}`);
-      setArticle(result.data.article);
+      const articleTemp = await getArticleById(article_id);
+      setArticle(articleTemp);
     } catch (err) {
       console.log(err);
     }
   }
 
   useEffect(() => {
-    getArticle();
+    fetchArticle();
   }, []);
 
   return (
