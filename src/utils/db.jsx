@@ -17,4 +17,9 @@ async function getUsers() {
   return result.data.users;
 }
 
-export { getArticles, getArticleById, getUsers };
+async function getCommentsByArticleId(article_id) {
+  const result = await api.get(`/articles/${article_id}/comments`);
+  return result.data.comments;
+}
+
+export { getArticles, getArticleById, getUsers, getCommentsByArticleId };
