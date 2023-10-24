@@ -1,33 +1,45 @@
-import React, { useEffect, useState } from "react";
-import { getCommentsByArticleId } from "../utils/db";
+import React, { useState } from "react";
+import { updateCommentVoteById } from "../utils/db";
 
-function Comment({ article_id }) {
-  const [comments, setComments] = useState([]);
-  async function fetchComments() {
+function Comment({ comment }) {
+  const [votes, setVotes] = useState(comment.votes);
+  const [voteText, setVoteText] = useState("");
+
+  async function handleClickVote(e, value) {
     try {
-      const commentsTemp = await getCommentsByArticleId(article_id);
-      setComments(commentsTemp);
+      const result = await updateCommentVoteById(comment.comment_id, value);
+      e.target.disabled = true;
+      setVotes(votes + value);
+      setVoteText("vote success");
     } catch (err) {
-      console.log(err);
+      setVoteText("Please try again");
     }
   }
 
-  useEffect(() => {
-    fetchComments();
-  }, []);
-
   return (
-    <>
-      {comments.map((comment) => {
-        return (
-          <article className="comment-article">
-            <p>author: {comment.author}</p>
-            <br />
-            <p>{comment.body} </p>
-          </article>
-        );
-      })}
-    </>
+    <article className="comment-article">
+      <p>author: {comment.author}</p>
+      <br />
+      <p>{comment.body} </p>
+      <div className="vote-section">
+        <p>{voteText}</p>
+        <button
+          onClick={(e) => {
+            handleClickVote(e, -1);
+          }}
+        >
+          -
+        </button>
+        <p>{votes}</p>
+        <button
+          onClick={(e) => {
+            handleClickVote(e, 1);
+          }}
+        >
+          +
+        </button>
+      </div>
+    </article>
   );
 }
 
