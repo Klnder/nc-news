@@ -22,4 +22,11 @@ async function getCommentsByArticleId(article_id) {
   return result.data.comments;
 }
 
-export { getArticles, getArticleById, getUsers, getCommentsByArticleId };
+async function updateCommentVoteById(comment_id, value) {
+  const result = await api.patch(`/comments/${comment_id}`, {
+    inc_votes: value,
+  });
+  return result.data.comment;
+}
+
+export { getArticles, getArticleById, getUsers, getCommentsByArticleId, updateCommentVoteById };
