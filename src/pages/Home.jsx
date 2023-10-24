@@ -2,29 +2,29 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import HomeArticle from "../components/HomeArticle";
 import "./Home.css";
+import { getArticles } from "../utils/db";
 
 function Home() {
   const [articles, setArticles] = useState([]);
 
-  async function getArticles() {
+  async function fetchArticles() {
     try {
-      const result = await axios.get("https://nc-api-project.onrender.com/api/articles");
-      setArticles(result.data.articles);
+      const articlesTemp = await getArticles();
+      setArticles(articlesTemp);
     } catch (err) {
       console.log(err);
     }
   }
 
   useEffect(() => {
-    getArticles();
+    fetchArticles();
   }, []);
+
   return (
     <div id="home-container">
-      <div id="articles-container">
-        {articles.map((article) => {
-          return <HomeArticle article={article} key={article.article_id} />;
-        })}
-      </div>
+      {articles.map((article) => {
+        return <HomeArticle article={article} key={article.article_id} />;
+      })}
     </div>
   );
 }
