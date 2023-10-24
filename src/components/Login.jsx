@@ -4,7 +4,7 @@ import LoginModal from "./LoginModal";
 import UserModal from "./UserModal";
 
 function Login() {
-  const { user, setUser } = useContext(LoginContext);
+  const { user } = useContext(LoginContext);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showUserModal, setShowUserModal] = useState(false);
 

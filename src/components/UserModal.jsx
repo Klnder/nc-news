@@ -7,21 +7,23 @@ function UserModal({ setShowUserModal }) {
 
   function handleClick(e) {
     e.preventDefault();
-    const url = e.target.href.split("/");
-    if (url[url.length - 1] === "home") {
-      setUser([]);
-    }
     setShowUserModal(false);
+    if (e.target.href) {
+      const url = e.target.href.split("/");
+      if (url[url.length - 1] === "home") {
+        setUser([]);
+      }
+    }
   }
 
   return (
-    <div id="user-modal">
-      <nav
-        id="user-nav"
-        onClick={(e) => {
-          handleClick(e);
-        }}
-      >
+    <div
+      id="user-modal"
+      onClick={(e) => {
+        handleClick(e);
+      }}
+    >
+      <nav id="user-nav">
         <div id="user-card">
           <img src={user.avatar_url} alt="avatar user" />
           <p>
