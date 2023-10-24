@@ -7,6 +7,7 @@ import Article from "./pages/Article";
 import NoPage from "./pages/NoPage";
 import "./reset.css";
 import "./App.css";
+import Login from "./components/Login";
 
 function App() {
   return (

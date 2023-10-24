@@ -12,4 +12,9 @@ async function getArticleById(article_id) {
   return result.data.article;
 }
 
-export { getArticles, getArticleById };
+async function getUsers() {
+  const result = await api.get("/users");
+  return result.data.users;
+}
+
+export { getArticles, getArticleById, getUsers };
