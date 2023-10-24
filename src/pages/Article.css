@@ -1,13 +1,17 @@
 #article-container {
   width: 80%;
   margin: 0 auto;
+  padding: 10px 0;
 }
 
-#full-article {
-  margin: 10px;
-  padding: 10px;
-}
 #full-article > section {
-  margin: 10px;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.comment-article {
+  background-color: #4e637e;
+  margin: 10px 0;
+  border-radius: 10px;
   padding: 10px;
 }
