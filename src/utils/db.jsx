@@ -2,11 +2,18 @@ import axios from "axios";
 
 const api = axios.create({ baseURL: "https://nc-api-project.onrender.com/api" });
 
-export async function getArticles(topic) {
-  let query = "";
+export async function getArticles(topic, sortBy, order) {
+  let query = "?";
   if (topic) {
-    query = `?topic=${topic}`;
+    query += `topic=${topic}&`;
   }
+  if (sortBy) {
+    query += `sort_by=${sortBy}&`;
+  }
+  if (order) {
+    query += `order=${order}&`;
+  }
+  console.log(query);
 
   const result = await api.get(`/articles${query}`);
   return result.data.articles;

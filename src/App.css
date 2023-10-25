@@ -134,12 +134,3 @@ nav > a:hover {
   background-color: white;
   color: black;
 }
-#nav-topic {
-  padding: 20px 0;
-  text-align: center;
-}
-
-.active {
-  background-color: white;
-  color: black;
-}
