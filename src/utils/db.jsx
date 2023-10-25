@@ -29,4 +29,9 @@ async function updateCommentVoteById(comment_id, value) {
   return result.data.comment;
 }
 
-export { getArticles, getArticleById, getUsers, getCommentsByArticleId, updateCommentVoteById };
+async function postComment(article_id, comment) {
+  const result = await api.post(`/articles/${article_id}/comments`, comment);
+  return result.data.comment;
+}
+
+export { getArticles, getArticleById, getUsers, getCommentsByArticleId, updateCommentVoteById, postComment };

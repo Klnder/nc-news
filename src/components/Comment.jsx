@@ -4,11 +4,12 @@ import { updateCommentVoteById } from "../utils/db";
 function Comment({ comment }) {
   const [votes, setVotes] = useState(comment.votes);
   const [voteText, setVoteText] = useState("");
+  const [alreadyVote, setAlreadyVote] = useState(false);
 
-  async function handleClickVote(e, value) {
+  async function handleClickVote(value) {
     try {
+      setAlreadyVote(true);
       const result = await updateCommentVoteById(comment.comment_id, value);
-      e.target.disabled = true;
       setVotes(votes + value);
       setVoteText("vote success");
     } catch (err) {
@@ -24,16 +25,18 @@ function Comment({ comment }) {
       <div className="vote-section">
         <p>{voteText}</p>
         <button
-          onClick={(e) => {
-            handleClickVote(e, -1);
+          disabled={alreadyVote}
+          onClick={() => {
+            handleClickVote(-1);
           }}
         >
           -
         </button>
         <p>{votes}</p>
         <button
-          onClick={(e) => {
-            handleClickVote(e, 1);
+          disabled={alreadyVote}
+          onClick={() => {
+            handleClickVote(1);
           }}
         >
           +

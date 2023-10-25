@@ -27,3 +27,12 @@
   padding: 2px;
   margin: 2px;
 }
+#comment-container {
+  height: 600px;
+  overflow: auto;
+}
+
+#body-comment {
+  resize: none;
+  width: 100%;
+}
