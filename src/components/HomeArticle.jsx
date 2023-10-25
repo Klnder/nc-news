@@ -1,11 +1,13 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function HomeArticle({ article }) {
+  const { topic } = useParams();
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate(`/home/${article.article_id}`);
+    let topicUrl = article.topic;
+    navigate(`/home/${topicUrl}/${article.article_id}`);
   }
 
   return (
@@ -15,7 +17,7 @@ function HomeArticle({ article }) {
       </div>
       <div className="details">
         <p>{article.title}</p>
-        <p>{article.topic}</p>
+        {!topic && <p>{article.topic}</p>}
         <p>{article.created_at}</p>
         <p>Vote : {article.votes}</p>
       </div>

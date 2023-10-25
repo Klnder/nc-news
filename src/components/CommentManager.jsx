@@ -19,12 +19,12 @@ function CommentManager({ article_id }) {
 
   return (
     <>
+      <CreateComment article_id={article_id} setComments={setComments} />
       <div id="comment-container">
         {comments.map((comment) => {
           return <Comment key={comment.comment_id} comment={comment} />;
         })}
       </div>
-      <CreateComment article_id={article_id} setComments={setComments} />
     </>
   );
 }

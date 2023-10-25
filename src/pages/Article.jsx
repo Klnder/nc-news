@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import "./Article.css";
 import { getArticleById } from "../utils/db";
 import DetailedArticle from "../components/DetailedArticle";
@@ -8,6 +8,7 @@ import CommentManager from "../components/CommentManager";
 function Article() {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
+  const navigate = useNavigate();
 
   async function fetchArticle() {
     try {
@@ -15,6 +16,7 @@ function Article() {
       setArticle(articleTemp);
     } catch (err) {
       console.log(err);
+      navigate("/error");
     }
   }
 
