@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCommentsByArticleId } from "../utils/db";
 import Comment from "./Comment";
+import CreateComment from "./CreateComment";
 
 function CommentManager({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -18,9 +19,12 @@ function CommentManager({ article_id }) {
 
   return (
     <>
-      {comments.map((comment) => {
-        return <Comment key={comment.comment_id} comment={comment} />;
-      })}
+      <div id="comment-container">
+        {comments.map((comment) => {
+          return <Comment key={comment.comment_id} comment={comment} />;
+        })}
+      </div>
+      <CreateComment article_id={article_id} setComments={setComments} />
     </>
   );
 }

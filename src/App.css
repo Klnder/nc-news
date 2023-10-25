@@ -86,6 +86,9 @@ fieldset > * {
   margin: 2px;
   padding: 2px;
 }
+legend {
+  text-align: center;
+}
 
 #user-modal {
   height: 100vh;
