@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function SortMenu({ sortBy, setSortBy, order, setOrder }) {
   const options = [

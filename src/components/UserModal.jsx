@@ -31,7 +31,6 @@ function UserModal({ setShowUserModal }) {
           </p>
         </div>
 
-        <Link to="/myarticles">My Articles</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/home">Logout</Link>
       </nav>
