@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { updateCommentVoteById } from "../utils/db";
+import React, { useContext, useState } from "react";
+import { deleteComment, updateCommentVoteById } from "../utils/db";
+import { LoginContext } from "../context/Login";
 
 function Comment({ comment }) {
   const [votes, setVotes] = useState(comment.votes);
   const [voteText, setVoteText] = useState("");
   const [alreadyVote, setAlreadyVote] = useState(false);
+  const { user } = useContext(LoginContext);
+  const [deleteInProgress, setDeleteInProgress] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
 
   async function handleClickVote(value) {
     try {
@@ -16,33 +20,53 @@ function Comment({ comment }) {
       setVoteText("Please try again");
     }
   }
+  async function deleteClick(e) {
+    e.preventDefault(e);
+    setDeleteInProgress(true);
+    try {
+      await deleteComment(comment.comment_id);
+      setIsDelete(true);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
-    <article className="comment-article">
-      <p>author: {comment.author}</p>
-      <br />
-      <p>{comment.body} </p>
-      <div className="vote-section">
-        <p>{voteText}</p>
-        <button
-          disabled={alreadyVote}
-          onClick={() => {
-            handleClickVote(-1);
-          }}
-        >
-          -
-        </button>
-        <p>{votes}</p>
-        <button
-          disabled={alreadyVote}
-          onClick={() => {
-            handleClickVote(1);
-          }}
-        >
-          +
-        </button>
-      </div>
-    </article>
+    <>
+      {!isDelete && (
+        <article className="comment-article">
+          {user.username === comment.author && <button onClick={(e) => deleteClick(e)}>delete</button>}
+          {deleteInProgress && <p>Deletion in progress</p>}
+          {!deleteInProgress && (
+            <>
+              <p>author: {comment.author}</p>
+              <br />
+              <p>{comment.body} </p>
+              <div className="vote-section">
+                <p>{voteText}</p>
+                <button
+                  disabled={alreadyVote}
+                  onClick={() => {
+                    handleClickVote(-1);
+                  }}
+                >
+                  -
+                </button>
+                <p>{votes}</p>
+                <button
+                  disabled={alreadyVote}
+                  onClick={() => {
+                    handleClickVote(1);
+                  }}
+                >
+                  +
+                </button>
+              </div>
+            </>
+          )}
+        </article>
+      )}
+    </>
   );
 }
 

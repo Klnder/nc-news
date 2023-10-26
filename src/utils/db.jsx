@@ -46,3 +46,7 @@ export async function getTopics() {
   } = await api.get("/topics");
   return topics;
 }
+
+export async function deleteComment(comment_id) {
+  await api.delete(`/comments/${comment_id}`);
+}
