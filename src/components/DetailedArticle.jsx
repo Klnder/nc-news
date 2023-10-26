@@ -6,7 +6,6 @@ function DetailedArticle({ article }) {
     <article id="full-article">
       <section>
         <p>{article.topic}</p>
-
         <h2>{article.title}</h2>
       </section>
       <section>

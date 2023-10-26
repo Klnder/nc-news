@@ -3,9 +3,9 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Article from "./pages/Article";
-import NoPage from "./pages/NoPage";
 import "./reset.css";
 import "./App.css";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
           <Route index path="/home/:topic" element={<Home />} />
           <Route path="/home/:topic/:article_id" element={<Article />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/*" element={<NoPage />} />
+          <Route path="/error/:error_message" element={<ErrorPage />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </main>
     </>

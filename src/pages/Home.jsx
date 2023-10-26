@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import HomeArticle from "../components/HomeArticle";
 import "./Home.css";
 import { getArticles } from "../utils/db";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import NavTopic from "../components/NavTopic";
 import SortMenu from "../components/SortMenu";
 
@@ -10,6 +10,7 @@ function Home() {
   const { topic } = useParams();
   let [searchParams, setSearchParams] = useSearchParams();
   const [articles, setArticles] = useState([]);
+  const navigate = useNavigate();
   const [sortBy, setSortBy] = useState(searchParams.get("sortBy") || "created_at");
   const [order, setOrder] = useState(searchParams.get("order") || "desc");
 
@@ -18,7 +19,7 @@ function Home() {
       const articlesTemp = await getArticles(topic, sortBy, order);
       setArticles(articlesTemp);
     } catch (err) {
-      console.log(err);
+      navigate(`/error/${err.response.data.msg}`);
     }
   }
 
