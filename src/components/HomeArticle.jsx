@@ -17,9 +17,9 @@ function HomeArticle({ article }) {
         <img src={article.article_img_url} alt="img of the article" />
       </div>
       <div className="details">
-        <p>{article.title}</p>
-        {!topic && <p>{article.topic}</p>}
-        <p>{format(new Date(article.created_at), "dd MMM yyyy HH:MM")}</p>
+        <h3>{article.title}</h3>
+        {!topic && <p>In: {article.topic}</p>}
+        <p>Written the: {format(new Date(article.created_at), "dd MMM yyyy HH:MM")}</p>
         <p>Vote : {article.votes}</p>
       </div>
     </article>

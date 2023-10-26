@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-color: #26272c;
+  background-color: #1e1c21;
   color: white;
 }
 header,
@@ -14,7 +14,7 @@ main,
 footer {
   width: 80%;
   margin: 10px auto;
-  background-color: #3e4f65;
+  background-color: #00668f;
   border-radius: 10px;
 }
 
@@ -24,28 +24,44 @@ header {
   display: flex;
   flex-direction: row;
 }
-
+#header-title {
+  flex-grow: 1;
+  flex-basis: 80%;
+}
 h1 {
   font-weight: 700;
   font-size: 2rem;
+  display: inline-block;
   padding: 5px;
   margin: 5px;
-  flex-grow: 1;
-  flex-basis: 80%;
   cursor: pointer;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 #login {
   flex-grow: 1;
   flex-basis: 20%;
-  background-color: #4e637e;
+  background-color: #0092cc;
   padding: 4px;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
+
 #login > img {
   border-radius: 50%;
   width: 50px;
@@ -55,7 +71,7 @@ h1 {
 #login:hover {
   background-color: white;
   color: black;
-  box-shadow: 5px 5px 0 0 rgba(9, 40, 102, 1), 0 0 10px 10px rgba(9, 40, 102, 1);
+  box-shadow: 0 0 10px 10px rgba(9, 40, 102, 1);
 }
 
 #login-modal {
@@ -88,6 +104,8 @@ fieldset > * {
 }
 legend {
   text-align: center;
+  position: relative;
+  top: -5px;
 }
 
 #user-modal {
@@ -109,6 +127,17 @@ legend {
   height: 100vh;
   width: 30vw;
 }
+#user-nav > a {
+  padding: 5px;
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+}
+#user-nav > a:hover {
+  background-color: white;
+  color: black;
+}
 
 #user-card {
   display: flex;
@@ -123,14 +152,7 @@ legend {
   margin: 10px;
 }
 
-nav > a {
+footer {
+  text-align: center;
   padding: 5px;
-  margin: 10px;
-  text-decoration: none;
-  color: white;
-  border-radius: 10px;
-}
-nav > a:hover {
-  background-color: white;
-  color: black;
 }

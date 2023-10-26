@@ -8,9 +8,22 @@
   margin: 10px 0;
   padding: 10px 0;
 }
+#img-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#img-section > img {
+  width: 50%;
+}
+#body-article {
+  margin: 0 auto;
+  width: 80%;
+  text-align: justify;
+}
 
 .comment-article {
-  background-color: #4e637e;
+  background-color: #0092cc;
   margin: 10px 0;
   border-radius: 10px;
   padding: 10px;

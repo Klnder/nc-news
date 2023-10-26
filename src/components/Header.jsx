@@ -11,7 +11,10 @@ function Header() {
   }
   return (
     <header>
-      <h1 onClick={(e) => handleClick(e)}>NC News</h1>
+      <div id="header-title">
+        <h1 onClick={(e) => handleClick(e)}>NC News</h1>
+      </div>
+
       <Login />
     </header>
   );

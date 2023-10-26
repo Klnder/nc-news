@@ -6,6 +6,7 @@ import Article from "./pages/Article";
 import "./reset.css";
 import "./App.css";
 import ErrorPage from "./pages/ErrorPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
