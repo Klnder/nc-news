@@ -7,14 +7,12 @@ import Article from "./pages/Article";
 import NoPage from "./pages/NoPage";
 import "./reset.css";
 import "./App.css";
-import NavTopic from "./components/NavTopic";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <NavTopic />
         <Routes>
           <Route path="/" element={<Navigate replace to="/home" />} />
           <Route index path="/home" element={<Home />} />

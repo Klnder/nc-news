@@ -36,3 +36,21 @@ img {
 .details {
   grid-area: details;
 }
+
+#nav-topic {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.active {
+  background-color: white;
+  color: black;
+}
+
+#sort-menu {
+  text-align: center;
+}
+#sort-menu > * {
+  padding: 5px;
+  margin: 5px;
+}
