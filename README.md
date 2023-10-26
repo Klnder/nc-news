@@ -9,10 +9,11 @@ The website is available at: [NC News](https://nc-news-pinpin.netlify.app/home)
 
 ## How to Run the project locally
 
-### Clone from the repo
+### Clone from the repo and change directory
 
 ```properties
  git clone https://github.com/Klnder/nc-news.git
+ cd nc-news
 ```
 
 ### Install dependencies

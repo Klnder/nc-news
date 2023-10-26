@@ -6,14 +6,18 @@ import DetailedArticle from "../components/DetailedArticle";
 import CommentManager from "../components/CommentManager";
 
 function Article() {
-  const { article_id } = useParams();
+  const { topic, article_id } = useParams();
   const [article, setArticle] = useState([]);
   const navigate = useNavigate();
 
   async function fetchArticle() {
     try {
       const articleTemp = await getArticleById(article_id);
-      setArticle(articleTemp);
+      if (topic !== articleTemp.topic) {
+        navigate(`/error/topic is not valid`);
+      } else {
+        setArticle(articleTemp);
+      }
     } catch (err) {
       navigate(`/error/${err.response.data.msg}`);
     }
