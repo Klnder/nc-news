@@ -15,8 +15,7 @@ function Article() {
       const articleTemp = await getArticleById(article_id);
       setArticle(articleTemp);
     } catch (err) {
-      console.log(err);
-      navigate("/error");
+      navigate(`/error/${err.response.data.msg}`);
     }
   }
 
@@ -30,7 +29,7 @@ function Article() {
       <br />
       <h3>Comment Section: </h3>
       <br />
-      <CommentManager article_id={article_id} />
+      {article.length !== 0 && <CommentManager article_id={article_id} />}
     </div>
   );
 }
