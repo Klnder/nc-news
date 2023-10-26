@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import React from "react";
 
 function DetailedArticle({ article }) {
@@ -14,7 +15,7 @@ function DetailedArticle({ article }) {
       <section>
         <p>{article.body}</p>
         <p>Written by: {article.author}</p>
-        <p>The : {article.created_at}</p>
+        <p>The : {article.created_at && format(new Date(article.created_at), "dd MMM yyyy HH:MM")}</p>
       </section>
     </article>
   );

@@ -23,7 +23,6 @@ function Home() {
   }
 
   useEffect(() => {
-    console.log(sortBy, order);
     setSearchParams({ sortBy: sortBy, order: order });
     fetchArticles();
   }, [topic, sortBy, order]);

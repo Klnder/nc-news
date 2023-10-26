@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -18,7 +19,7 @@ function HomeArticle({ article }) {
       <div className="details">
         <p>{article.title}</p>
         {!topic && <p>{article.topic}</p>}
-        <p>{article.created_at}</p>
+        <p>{format(new Date(article.created_at), "dd MMM yyyy HH:MM")}</p>
         <p>Vote : {article.votes}</p>
       </div>
     </article>
