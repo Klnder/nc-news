@@ -43,7 +43,12 @@ function HomeArticle({ article }) {
                 <h3>{article.title}</h3>
                 {!topic && <p>In: {article.topic}</p>}
                 <p>Written the: {format(new Date(article.created_at), "dd MMM yyyy HH:MM")}</p>
-                <p>Votes: {article.votes}</p>
+                <p className="comment-count">
+                  {article.comment_count}&nbsp;
+                  <span class="material-symbols-outlined">comment</span>&nbsp;
+                  {article.votes}&nbsp;
+                  <span class="material-symbols-outlined">thumb_up</span>
+                </p>
               </div>
             </>
           )}

@@ -10,14 +10,14 @@
 
 .home-article {
   margin: 10px auto;
-  padding: 5px;
+  padding: 5px 5px 0 5px;
   background-color: #3e68a3;
   width: 90%;
   border-radius: 10px;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s;
   display: grid;
-  grid-template-columns: 25% 1.4fr;
+  grid-template-columns: 20% 1.4fr;
   grid-template-rows: 1fr;
   gap: 0px 10px;
   grid-template-areas: "img details";
@@ -47,6 +47,10 @@ img {
 .details > * {
   padding: 5px;
   margin-bottom: 5px;
+}
+.comment-count {
+  display: flex;
+  align-items: center;
 }
 
 #nav-topic {

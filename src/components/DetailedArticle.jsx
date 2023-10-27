@@ -47,7 +47,9 @@ function DetailedArticle({ article }) {
           >
             -
           </button>
-          <p>{votes}</p>
+          <p>
+            {votes} <span class="material-symbols-outlined">thumb_up</span>
+          </p>
           <button
             disabled={alreadyVote}
             onClick={() => {
