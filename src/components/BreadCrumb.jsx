@@ -21,7 +21,7 @@ function BreadCrumb({ article }) {
           );
         } else {
           return (
-            <li key={index}>
+            <li key={index} id="last-breadcrumb">
               <Link to={item.path}>{item.name}</Link>
             </li>
           );

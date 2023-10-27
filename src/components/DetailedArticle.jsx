@@ -33,9 +33,9 @@ function DetailedArticle({ article }) {
       <section>
         <p id="body-article">{article.body}</p>
         <br />
-        <p>
-          Written by: {article.author} the : {article.created_at && format(new Date(article.created_at), "dd MMM yyyy HH:MM")}
-        </p>
+        <p>Written by: {article.author} </p>
+        <br />
+        <p>the : {article.created_at && format(new Date(article.created_at), "dd MMM yyyy HH:MM")}</p>
         <br />
         <div className="vote-section">
           <p>{voteText}</p>
