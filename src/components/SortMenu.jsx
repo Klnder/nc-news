@@ -8,7 +8,7 @@ function SortMenu({ sortBy, setSortBy, order, setOrder }) {
 
   return (
     <form id="sort-menu">
-      <label htmlFor="sortBy">Sort By: </label>
+      <label htmlFor="sortby">Sort By: </label>
       <select name="sortBy" id="sortby" defaultValue={sortBy} onChange={(e) => setSortBy(e.target.value)}>
         {options.map((option) => (
           <option key={option.value} value={option.value}>

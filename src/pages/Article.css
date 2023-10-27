@@ -23,7 +23,7 @@
 }
 
 .comment-article {
-  background-color: #0092cc;
+  background-color: 3e68A3;
   margin: 10px 0;
   border-radius: 10px;
   padding: 10px;
@@ -48,4 +48,31 @@
 #body-comment {
   resize: none;
   width: 100%;
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb li {
+  display: inline-block;
+}
+
+.breadcrumb li + li {
+  margin-left: 10px;
+}
+
+.breadcrumb li span {
+  margin: 0 5px;
 }

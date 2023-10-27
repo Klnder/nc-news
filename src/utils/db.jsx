@@ -50,3 +50,12 @@ export async function getTopics() {
 export async function deleteComment(comment_id) {
   await api.delete(`/comments/${comment_id}`);
 }
+
+export async function updateArticleVoteById(article_id, value) {
+  const result = await api.patch(`/articles/${article_id}`, { inc_votes: value });
+  return result.data.article;
+}
+
+export async function deleteArticle(article_id) {
+  await api.delete(`/articles/${article_id}`);
+}

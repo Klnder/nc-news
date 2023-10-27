@@ -11,7 +11,7 @@
 .home-article {
   margin: 10px auto;
   padding: 5px;
-  background-color: #0092cc;
+  background-color: #3e68a3;
   width: 90%;
   border-radius: 10px;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -25,7 +25,6 @@
 .home-article:hover {
   box-shadow: 6px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(9, 40, 102, 1);
   transform: scale(1.03);
-  cursor: pointer;
 }
 
 .img {
@@ -38,6 +37,9 @@ img {
 
 .details {
   grid-area: details;
+}
+.details:hover {
+  cursor: pointer;
 }
 .home-article:hover > .details > h3 {
   color: black;

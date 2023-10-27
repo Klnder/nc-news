@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-color: #1e1c21;
+  background-color: #091120;
   color: white;
 }
 header,
@@ -14,8 +14,9 @@ main,
 footer {
   width: 80%;
   margin: 10px auto;
-  background-color: #00668f;
+  background-color: #223959;
   border-radius: 10px;
+  padding: 5px;
 }
 
 header {
@@ -52,7 +53,7 @@ h3 {
 #login {
   flex-grow: 1;
   flex-basis: 20%;
-  background-color: #0092cc;
+  background-color: #3e68a3;
   padding: 4px;
   border-radius: 10px;
   display: flex;

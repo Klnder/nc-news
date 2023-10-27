@@ -4,6 +4,7 @@ import "./Article.css";
 import { getArticleById } from "../utils/db";
 import DetailedArticle from "../components/DetailedArticle";
 import CommentManager from "../components/CommentManager";
+import BreadCrumb from "../components/BreadCrumb";
 
 function Article() {
   const { topic, article_id } = useParams();
@@ -29,6 +30,7 @@ function Article() {
 
   return (
     <div id="article-container">
+      <BreadCrumb article={article} />
       <DetailedArticle article={article} />
       <br />
       <h3>Comment Section: </h3>

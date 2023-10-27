@@ -30,6 +30,7 @@ function Home() {
 
   return (
     <>
+      <h2>Filter the news: </h2>
       <NavTopic />
       <SortMenu order={order} setOrder={setOrder} sortBy={sortBy} setSortBy={setSortBy} />
       <div id="home-container">
